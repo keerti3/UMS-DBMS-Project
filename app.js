@@ -9,8 +9,6 @@ const methodOverride = require('method-override');
 
 const sql = require('./database/mysql');
 const adminRoutes = require('./routes/admin');
-// const staffRoutes = require('./routes/staff');
-// const studentRoutes = require('./routes/student');
 const homeRoutes = require('./routes/home');
 
 // Load environment variables
@@ -53,8 +51,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Route handlers
 app.use('/admin', adminRoutes);
-// app.use('/staff', staffRoutes);
-// app.use('/student', studentRoutes);
 app.use('/', homeRoutes);
 
 // Start server
