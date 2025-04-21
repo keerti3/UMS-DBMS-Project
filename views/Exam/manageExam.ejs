@@ -1,0 +1,57 @@
+<%- include('../../Includes/begin.ejs') %>
+
+<link rel="stylesheet" href="../../CSS/admin-dashboard.css">
+
+<div class="container-fluid">
+    <div id="wrapper">
+        <%- include('../../Includes/admin_nav.ejs') %>
+
+        <section id="content-wrapper">
+            <main role="main" class="pt-5 main">
+                <div class="main-content">
+                    <div class="header pb-4 pb-sm-8 pt-5 pt-lg-8 d-flex align-items-center"
+                        style="height: 100px; background-size: cover; background-position: center top;">
+                    </div>
+                    <div class="container-fluid mt--7">
+                        <div class="row">
+                            <div class="col-xl-12 order-xl-1">
+                                <div class="card bg-secondary shadow">
+                                    <div class="card-header bg-white border-0">
+                                        <div class="row align-items-center">
+                                            <div class="col-8">
+                                                <h3 class="mb-0" style="color: brown;">Manage Marks for Exam</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <%- include('../../Includes/messages') %>
+
+                                        <h6 class="heading-small text-muted mb-4">Exam Details</h6>
+                                        <form action="/admin/updateExam/<%= exam.ExamID %>" method="POST">
+                                            <div class="form-group">
+                                                <label for="examDate"><strong>Exam Date:</strong></label>
+                                                <p><%= exam.ExamDate %></p>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="courseName"><strong>Course:</strong></label>
+                                                <p><%= exam.CourseName %></p>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="totalMarks"><strong>Total Marks:</strong></label>
+                                                <input type="number" name="TotalMarks" id="totalMarks" value="<%= exam.TotalMarks %>" class="form-control" min="1" required>
+                                            </div>
+
+                                            <button type="submit" class="btn btn-success mt-3">Update Marks</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </section>
+    </div>
+</div>
